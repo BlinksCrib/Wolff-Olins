@@ -134,7 +134,7 @@ const News = () => {
   return (
     <div
       ref={targetRef}
-      className="px-8 sm:px-0 w-full max-w-[1140px] mx-auto flex flex-col gap-8 pb-32 "
+      className="px-8 sm:px-0 w-full max-w-[1140px] llg:w-[90%] mx-auto flex flex-col gap-8 pb-32 "
     >
       <span className="text-[32.81px] text-black border-t-[1px] border-[#000] flex">
         Featured News

@@ -52,7 +52,7 @@ const Work = () => {
   };
   return (
     <>
-      <div className="px-8 sm:px-0 w-full mb-36 max-w-[1140px] mx-auto flex flex-col gap-14">
+      <div className="px-8 sm:px-0 w-full mb-36 max-w-[1140px] llg:w-[90%] mx-auto flex flex-col gap-14">
         <span className="text-[32.81px] text-black border-t-[1px] border-[#000] flex">
           Selected Work
         </span>

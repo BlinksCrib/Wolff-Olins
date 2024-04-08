@@ -6,15 +6,25 @@ import footerLogo from "../../assets/logo.svg";
 const Footer = () => {
   const year = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: smooth scrolling behavior
+    });
+  };
+
   return (
     <footer className="h-[610px] bg-[#FFF84B] flex flex-col justify-between">
-      <div className="px-8 sm:px-0 pt-8 w-full max-w-[1140px] mx-auto flex flex-wrap justify-between">
+      <div className="px-8 sm:px-0 pt-8 w-full max-w-[1140px] llg:w-[90%] mx-auto flex flex-wrap justify-between">
         <div className="w-full md:w-auto flex justify-between">
           <div className="font-inter text-[14.38px]"> {year} Wolff Olins</div>
-          <div className="flex md:hidden flex-col gap-1  items-center">
+          <div
+            className="flex md:hidden flex-col gap-1  items-center cursor-pointer"
+            onClick={scrollToTop}
+          >
             <img
               src={backToTop}
-              className=" p-2 back-to-top"
+              className="p-2 back-to-top"
               alt="back-to-top"
             />
             <p className="text-[14.5px] text-black">Back to top</p>
@@ -54,7 +64,10 @@ const Footer = () => {
               <img src={footerlink} alt="footer-arrow" /> <span>Archive</span>
             </p>
           </div>
-          <div className="hidden md:flex flex-col gap-1  items-center">
+          <div
+            className="hidden md:flex flex-col gap-1  items-center  cursor-pointer"
+            onClick={scrollToTop}
+          >
             <img
               src={backToTop}
               className=" p-2 back-to-top"
@@ -64,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="px-8 sm:px-0 pb-[3rem] flex  w-full max-w-[1140px] mx-auto ">
+      <div className="px-8 sm:px-0 pb-[3rem] flex  w-full max-w-[1140px] llg:w-[90%] mx-auto ">
         <img src={footerLogo} className="w-full" alt="footer-logo" />
       </div>
     </footer>
