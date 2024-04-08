@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../../assets/logo.svg";
 import search from "../../assets/search.svg";
-// import menuOpen from "../../assets/menuOpen.svg";
+import menuOpen from "../../assets/menuOpen.svg";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -28,22 +28,24 @@ const Navbar = () => {
   useEffect(() => {
     const navbar = document.querySelector(".olins-nav");
     const navUnderlay = document.getElementById("nav-underlay");
-    if (navbar && navUnderlay) {
-      if (navbar.classList.contains("opened")) {
-        document.body.style.overflow = "hidden";
-        navUnderlay.style.display = "block";
-      } else {
-        document.body.style.overflow = "auto";
-        navUnderlay.style.display = "none";
+    if (navUnderlay) {
+      if (navbar) {
+        if (navbar.classList.contains("opened")) {
+          document.body.style.overflow = "hidden";
+          navUnderlay.style.display = "block";
+        } else {
+          document.body.style.overflow = "auto";
+          navUnderlay.style.display = "none";
+        }
       }
     }
   }, [bodyStyle]);
 
-  const navClass = (navbar: any) => {
+  const navClass = (navbar: Boolean) => {
     if (navbar) {
-      return ` olins-nav w-[90%] inset-x-0 overflow-hidden rounded-[25px] fixed z-[999] top-[15px] bg-[rgb(255,255,255,0.9)] px-3 py-[12px] max-w-[860px] mx-auto flex justify-between transition-all duration-[300ms]`;
+      return `olins-nav w-[90%] inset-x-0 overflow-hidden rounded-[25px] fixed z-[999] top-[15px] bg-[rgb(255,255,255,0.9)] px-3 py-[12px] max-w-[860px] mx-auto flex justify-between transition-all duration-[300ms]`;
     } else {
-      return ` my-[35px] w-full overflow-hidden relative h-[40px] z-[999] mx-auto olins-nav flex justify-between rounded-[25px] px-[16px] items-start transition-all duration-[300ms]`;
+      return `my-[35px] w-full overflow-hidden relative h-[40px] z-[999] mx-auto olins-nav flex justify-between rounded-[25px] px-[16px] items-start transition-all duration-[300ms]`;
     }
   };
 
@@ -58,11 +60,11 @@ const Navbar = () => {
               className="h-[18px] w-[100px] md:h-auto md:w-auto"
             />
           </div>
-          <div className="right-side flex items-center gap-3 md:gap-8">
-            <div onClick={openNav} className="md:hidden cursor-pointer">
-              {/* <img src={menuOpen} alt="menu-open" /> */}
+          <div className="right-side flex md:items-center gap-3 md:gap-8">
+            <div onClick={openNav} className="border md:hidden cursor-pointer">
+              <img src={menuOpen} alt="menu-open" />
             </div>
-            <ul className="nav-list flex gap-6 items-center font-medium text-[18px] text-textColor opacity-[0.8]">
+            <ul className="nav-list flex gap-6 items-center font-medium text-[18px] text-textColor opacity-[0.8] z-[999999]">
               <li className="cursor-pointer w-full">Work</li>
               <li className="cursor-pointer w-full">About</li>
               <li className="cursor-pointer w-full">News</li>

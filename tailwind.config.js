@@ -13,6 +13,7 @@ export default {
       colors: {
         black: '#181818',
         white: '#F2F2F2',
+        textColor:'#5E5E5E'
       },
       screens: {
         fd: [{ max: '320px' }],
